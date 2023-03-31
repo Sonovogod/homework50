@@ -1,8 +1,42 @@
-@model dynamic
+@model List<SeaFood>
 
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+<div class="text-center">
+    <h2>Морские продукты</h2>
+</div>
+<a asp-action="" class="my-3 btn btn-outline-info">Добавить животное</a>
+<div class="table_section">
+@{
+    if (!Model.Any())
+    {
+        <h2>Список морских продуктов пуст</h2>
+    }
+    else
+    {
+        foreach (var seaFood in Model)
+        {
+            <table class="table" style="width: 100%;">
+                <tr>
+                    <th>#Id</th>
+                    <th>Наименование</th>
+                    <th>Вес</th>
+                    <th>Срок годности</th>
+                    <th>Цена</th>
+                </tr>
+                <tr>
+                    <td>@seaFood.Id</td>
+                    <td>@seaFood.Title</td>
+                    <td>@seaFood.Weight</td>
+                    <td>@seaFood.ExpirationDate</td>
+                    <td>@seaFood.Coast</td>
+                </tr>
+            </table>
+        }
+    }
+}
+</div>
+

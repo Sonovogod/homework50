@@ -1,12 +1,21 @@
+using HomeWork.Models;
 using HomeWork.Services.Abstractions;
 
 namespace HomeWork.Services
 {
     public class SeaFoodService : IFoodServices
     {
-        public List<IFoodServices> GetAll()
+        private readonly FoodContext _db;
+
+        public SeaFoodService(FoodContext db)
         {
-            throw new NotImplementedException();
+            _db = db;
+        }
+
+        public List<SeaFood> GetAll()
+        {
+            List<SeaFood> seaFoods = _db.SeaFoods.ToList();
+            return seaFoods;
         }
     }
 }

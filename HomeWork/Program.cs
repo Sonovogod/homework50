@@ -1,4 +1,6 @@
 using HomeWork.Models;
+using HomeWork.Services;
+using HomeWork.Services.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FoodContext>(options => options.UseSqlite(connection));
+builder.Services.AddTransient<IFoodServices, SeaFoodService>();
 
 var app = builder.Build();
 
@@ -27,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=SeaFood}/{action=Index}/{id?}");
 
 app.Run();

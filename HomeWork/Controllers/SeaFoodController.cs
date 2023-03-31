@@ -1,13 +1,14 @@
 using HomeWork.Services;
+using HomeWork.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HomeWork.Controllers;
 
 public class SeaFoodController : Controller
 {
-    private readonly SeaFoodService _seaFoodService;
+    private readonly IFoodServices _seaFoodService;
 
-    public SeaFoodController(SeaFoodService seaFoodService)
+    public SeaFoodController(IFoodServices seaFoodService)
     {
         _seaFoodService = seaFoodService;
     }
@@ -15,7 +16,7 @@ public class SeaFoodController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-           
+        var seaFoods = _seaFoodService.GetAll();
         return View();
     }
 }
