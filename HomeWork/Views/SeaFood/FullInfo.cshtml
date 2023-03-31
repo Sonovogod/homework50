@@ -1,0 +1,24 @@
+@model SeaFood
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<div class="row justify-content-center">
+    <h2>Все что Вы хотели знать о @Model.Title</h2>
+    <div class="card px-0" style="width: 100%;">
+        <img src="https://www.man-meat.ru/upload/blog/stati/1.jpg" class="card-img-top" alt="seaFood">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">@Model.Discription</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Вес продукта: @Model.Weight</li>
+            <li class="list-group-item">Годен до: @Model.ExpirationDate.GetDateTimeFormats()[1]</li>
+            <li class="list-group-item">Стоимость: @Model.Coast</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="my-3 btn btn-outline-success">Сделать заказ</a>
+        </div>
+    </div>
+</div>

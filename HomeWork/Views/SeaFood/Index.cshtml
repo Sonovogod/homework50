@@ -24,6 +24,7 @@
                 <th>Вес</th>
                 <th>Срок годности</th>
                 <th>Цена</th>
+                <th>Действие</th>
             </tr>
         @foreach (var seaFood in Model)
         {
@@ -31,8 +32,11 @@
                 <td>@seaFood.Id</td>
                 <td>@seaFood.Title</td>
                 <td>@seaFood.Weight</td>
-                <td>@seaFood.ExpirationDate</td>
+                <td>@seaFood.ExpirationDate.GetDateTimeFormats()[1]</td>
                 <td>@seaFood.Coast</td>
+                <td><a asp-controller="SeaFood" 
+                       asp-action="FullInfo" 
+                       asp-route-id="@seaFood.Id" class="my-3 btn btn-outline-info d-inline">Подробнее</a></td>
             </tr>
         }
         </table>

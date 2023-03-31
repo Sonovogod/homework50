@@ -33,4 +33,10 @@ public class SeaFoodController : Controller
 
         return RedirectToAction("Index");
     }
+
+    [HttpGet]
+    public IActionResult FullInfo(int id)
+    {
+        return View(_seaFoodService.FullInfo(id));
+    }
 }

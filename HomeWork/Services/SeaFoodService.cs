@@ -23,5 +23,11 @@ namespace HomeWork.Services
             _db.SeaFoods.Add(seaFood);
             _db.SaveChanges();
         }
+
+        public SeaFood FullInfo(int id)
+        {
+            SeaFood seaFood = _db.SeaFoods.FirstOrDefault(x => x.Id == id);
+            return seaFood;
+        }
     }
 }
