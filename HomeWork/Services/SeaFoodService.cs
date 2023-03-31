@@ -17,5 +17,11 @@ namespace HomeWork.Services
             List<SeaFood> seaFoods = _db.SeaFoods.ToList();
             return seaFoods;
         }
+
+        public void Add(SeaFood seaFood)
+        {
+            _db.SeaFoods.Add(seaFood);
+            _db.SaveChanges();
+        }
     }
 }

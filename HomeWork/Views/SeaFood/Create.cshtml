@@ -1,0 +1,48 @@
+@model SeaFood
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Запоните поля для добавления новой позиции</h2>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            <div class="form-group mb-3">
+                <label for="title" class="mb-2">Наименование</label>
+                <input asp-for="Title"
+                       type="text"
+                       class="form-control"
+                       id="title"
+                       placeholder="Наименование">
+            </div>
+            <div class="form-group mb-3">
+                <label for="weight" class="mb-2">Вес</label>
+                <input asp-for="Weight"
+                       type="number"
+                       step="0.01"
+                       class="form-control"
+                       id="weight"
+                       placeholder="гр.">
+            </div>
+            <div class="form-group mb-3">
+                <label for="ED" class="mb-2">Срок годности</label>
+                <input asp-for="ExpirationDate"
+                       type="date"
+                       class="form-control"
+                       id="ED"
+                       placeholder="гр.">
+            </div>
+            <div class="form-group mb-3">
+                            <label for="Coast" class="mb-2">Стоимость</label>
+                            <input asp-for="Coast"
+                                   type="number"
+                                   class="form-control"
+                                   id="Coast"
+                                   placeholder="тугрики">
+                        </div>
+            <button type="submit" class="btn btn-outline-info mt-3">Создать</button>
+        </form>
+    </div>
+</div>

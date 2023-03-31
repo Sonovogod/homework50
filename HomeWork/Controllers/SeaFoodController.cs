@@ -1,4 +1,4 @@
-using HomeWork.Services;
+using HomeWork.Models;
 using HomeWork.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +17,20 @@ public class SeaFoodController : Controller
     public IActionResult Index()
     {
         var seaFoods = _seaFoodService.GetAll();
+        return View(seaFoods);
+    }
+
+    [HttpGet]
+    public IActionResult Create()
+    {
         return View();
+    }
+    
+    [HttpPost]
+    public IActionResult Create(SeaFood seaFood)
+    {
+        _seaFoodService.Add(seaFood);
+
+        return RedirectToAction("Index");
     }
 }

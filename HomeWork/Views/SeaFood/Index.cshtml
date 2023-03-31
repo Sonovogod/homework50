@@ -8,7 +8,7 @@
 <div class="text-center">
     <h2>Морские продукты</h2>
 </div>
-<a asp-action="" class="my-3 btn btn-outline-info">Добавить животное</a>
+<a asp-action="Create" class="my-3 btn btn-outline-info">Добавить продукт</a>
 <div class="table_section">
 @{
     if (!Model.Any())
@@ -17,25 +17,25 @@
     }
     else
     {
-        foreach (var seaFood in Model)
+        <table class="table" style="width: 100%;">
+            <tr>
+                <th>#Id</th>
+                <th>Наименование</th>
+                <th>Вес</th>
+                <th>Срок годности</th>
+                <th>Цена</th>
+            </tr>
+        @foreach (var seaFood in Model)
         {
-            <table class="table" style="width: 100%;">
-                <tr>
-                    <th>#Id</th>
-                    <th>Наименование</th>
-                    <th>Вес</th>
-                    <th>Срок годности</th>
-                    <th>Цена</th>
-                </tr>
-                <tr>
-                    <td>@seaFood.Id</td>
-                    <td>@seaFood.Title</td>
-                    <td>@seaFood.Weight</td>
-                    <td>@seaFood.ExpirationDate</td>
-                    <td>@seaFood.Coast</td>
-                </tr>
-            </table>
+            <tr>
+                <td>@seaFood.Id</td>
+                <td>@seaFood.Title</td>
+                <td>@seaFood.Weight</td>
+                <td>@seaFood.ExpirationDate</td>
+                <td>@seaFood.Coast</td>
+            </tr>
         }
+        </table>
     }
 }
 </div>
