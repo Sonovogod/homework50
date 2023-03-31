@@ -43,13 +43,21 @@
                        placeholder="годен до...">
             </div>
             <div class="form-group mb-3">
-                            <label for="Coast" class="mb-2">Стоимость</label>
-                            <input asp-for="Coast"
-                                   type="number"
-                                   class="form-control"
-                                   id="Coast"
-                                   placeholder="тугрики">
-                        </div>
+                <label for="Coast" class="mb-2">Стоимость</label>
+                <input asp-for="Coast"
+                       type="number"
+                       class="form-control"
+                       id="Coast"
+                       placeholder="тугрики">
+            </div>
+            <div class="form-group mb-3">
+                <label for="Image" class="mb-2">Картинка</label>
+                <input asp-for="Image"
+                       type="text"
+                       class="form-control"
+                       id="Image"
+                       placeholder="https://example.png">
+            </div>
             <button type="submit" class="btn btn-outline-info mt-3">Создать</button>
         </form>
     </div>
