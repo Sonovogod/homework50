@@ -1,7 +1,12 @@
+using HomeWork.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<FoodContext>(options => options.UseSqlite(connection));
 
 var app = builder.Build();
 
