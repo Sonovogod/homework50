@@ -21,5 +21,7 @@ public class CreateSeaFoodValidator : AbstractValidator<SeaFood>
             .GreaterThan(0).WithMessage("Вес должен быть больше 0");
         RuleFor(food => food.ExpirationDate)
             .GreaterThan(DateTime.Now).WithMessage("Срок годности не должен быть меньше текущей даты");
+        RuleFor(food => food.Image)
+            .NotEmpty().WithMessage("Поле картинки не может быть пустым");
     }
 }

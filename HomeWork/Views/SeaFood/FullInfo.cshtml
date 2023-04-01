@@ -18,7 +18,7 @@
             <li class="list-group-item">Стоимость: @Model.Coast</li>
         </ul>
         <div class="card-body">
-            <a href="#" class="my-3 btn btn-outline-success">Сделать заказ</a>
+            <a asp-route-id="@Model.Id" asp-controller="SeaFood" asp-action="Order" class="my-3 btn btn-outline-success">Сделать заказ</a>
         </div>
     </div>
 </div>

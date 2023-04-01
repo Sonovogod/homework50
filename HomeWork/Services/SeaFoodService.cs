@@ -29,5 +29,11 @@ namespace HomeWork.Services
             SeaFood seaFood = _db.SeaFoods.FirstOrDefault(x => x.Id == id);
             return seaFood;
         }
+
+        public void AddOrder(CustomerOrder order)
+        {
+            _db.CustomerOrders.Add(order);
+            _db.SaveChanges();
+        }
     }
 }
