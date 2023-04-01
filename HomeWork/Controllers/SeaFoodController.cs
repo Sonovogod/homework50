@@ -29,6 +29,7 @@ public class SeaFoodController : Controller
     [HttpPost]
     public IActionResult Create(SeaFood seaFood)
     {
+        
         _seaFoodService.Add(seaFood);
 
         return RedirectToAction("Index");
