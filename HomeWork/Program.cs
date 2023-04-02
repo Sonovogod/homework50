@@ -1,8 +1,7 @@
-using FluentValidation;
+
 using HomeWork.Models;
 using HomeWork.Services;
 using HomeWork.Services.Abstractions;
-using HomeWork.Validationd;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
